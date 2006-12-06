@@ -37,7 +37,7 @@ odzyskiwania danych.
 %build
 %{__make} \
 	RAW_CC="%{__cc}" \
-	RAW_FLAGS="%{rpmcflags} -DVERSION=%{version}" \
+	RAW_FLAGS="%{rpmcflags} -DVERSION=\\\"%{version}\\\"" \
 	BIN=%{_bindir} \
 	MAN=%{_mandir}/man1 \
 	CONF=%{_sysconfdir}
