@@ -1,5 +1,5 @@
 Summary:	Recover files by "carving" them from a raw disk
-Summary(pl):	Odzyskuje pliki przez "wykrawanie" ich z dysku
+Summary(pl):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.3
 Release:	1
@@ -8,7 +8,7 @@ Group:		Applications/System
 Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
 # Source0-md5:	73222e54aa0e0e878f58e91cb98f8fbf
 Patch0:		%{name}-sysconfdir.patch
-URL:		http://foremost.sourceforge.net
+URL:		http://foremost.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,7 +22,7 @@ file format allowing for a more reliable and faster recovery.
 
 %description -l pl
 Foremost odzyskuje pliki bazuj±c na ich nag³ówkach, stopkach, oraz
-wewnêtrznych struktrurach danych. Ten proces jest zwany jako
+wewnêtrznych strukturach danych. Ten proces jest zwany jako
 "wykrawanie" danych. Foremost mo¿e pracowaæ na "surowym" dostêpie do
 dysku lub obrazach utworzonych przez dd. Nag³ówki i stopki mog± byæ
 umieszczone w pliku konfiguracyjnym lub mo¿na u¿yæ linii poleceñ do
