@@ -1,5 +1,5 @@
 Summary:	Recover files by "carving" them from a raw disk
-Summary(pl):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
+Summary(pl.UTF-8):   Odzyskiwanie plikÃ³w poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.3
 Release:	1
@@ -20,14 +20,14 @@ file or you can use command line switches to specify built-in file
 types. These built-in types look at the data structures of a given
 file format allowing for a more reliable and faster recovery.
 
-%description -l pl
-Foremost odzyskuje pliki bazuj±c na ich nag³ówkach, stopkach, oraz
-wewnêtrznych strukturach danych. Ten proces jest zwany jako
-"wykrawanie" danych. Foremost mo¿e pracowaæ na "surowym" dostêpie do
-dysku lub obrazach utworzonych przez dd. Nag³ówki i stopki mog± byæ
-umieszczone w pliku konfiguracyjnym lub mo¿na u¿yæ linii poleceñ do
-wykorzystania wbudowanych typów. Wbudowane typy wskazuj± na struktury
-danych podanych formatów plików dla pewniejszego i szybszego
+%description -l pl.UTF-8
+Foremost odzyskuje pliki bazujÄ…c na ich nagÅ‚Ã³wkach, stopkach, oraz
+wewnÄ™trznych strukturach danych. Ten proces jest zwany jako
+"wykrawanie" danych. Foremost moÅ¼e pracowaÄ‡ na "surowym" dostÄ™pie do
+dysku lub obrazach utworzonych przez dd. NagÅ‚Ã³wki i stopki mogÄ… byÄ‡
+umieszczone w pliku konfiguracyjnym lub moÅ¼na uÅ¼yÄ‡ linii poleceÅ„ do
+wykorzystania wbudowanych typÃ³w. Wbudowane typy wskazujÄ… na struktury
+danych podanych formatÃ³w plikÃ³w dla pewniejszego i szybszego
 odzyskiwania danych.
 
 %prep
