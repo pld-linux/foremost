@@ -1,5 +1,5 @@
 Summary:	Recover files by "carving" them from a raw disk
-Summary(pl.UTF-8):   Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
+Summary(pl.UTF-8):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.3
 Release:	1
