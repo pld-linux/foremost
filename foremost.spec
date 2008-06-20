@@ -1,12 +1,12 @@
 Summary:	Recover files by "carving" them from a raw disk
 Summary(pl.UTF-8):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
-Version:	1.5
+Version:	1.5.4
 Release:	1
 License:	Public Domain
 Group:		Applications/System
 Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
-# Source0-md5:	a1f34dc28fc53129ace062a7a48e0042
+# Source0-md5:	55395b1fef1039a88e02d81682347f6d
 Patch0:		%{name}-sysconfdir.patch
 URL:		http://foremost.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
