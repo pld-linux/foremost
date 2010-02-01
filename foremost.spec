@@ -32,6 +32,7 @@ odzyskiwania danych.
 
 %prep
 %setup -q
+sed -i -e 's,\r$,,' main.h
 %patch0 -p1
 
 %build
