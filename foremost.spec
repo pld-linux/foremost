@@ -2,7 +2,7 @@ Summary:	Recover files by "carving" them from a raw disk
 Summary(pl.UTF-8):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.5.7
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		Applications/System
 Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
@@ -45,7 +45,7 @@ sed -i -e 's,\r$,,' main.h
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8,%{_sysconfdir}}
 
 %{__make} install \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
