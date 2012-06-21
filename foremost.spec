@@ -2,7 +2,7 @@ Summary:	Recover files by "carving" them from a raw disk
 Summary(pl.UTF-8):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.5.7
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Applications/System
 Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
@@ -40,7 +40,7 @@ sed -i -e 's,\r$,,' main.h
 	RAW_CC="%{__cc}" \
 	RAW_FLAGS="%{rpmcflags} -DVERSION=\\\"%{version}\\\"" \
 	BIN=%{_bindir} \
-	MAN=%{_mandir}/man1 \
+	MAN=%{_mandir}/man8 \
 	CONF=%{_sysconfdir}
 
 %install
@@ -49,7 +49,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}}
 
 %{__make} install \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
-	MAN=$RPM_BUILD_ROOT%{_mandir}/man1 \
+	MAN=$RPM_BUILD_ROOT%{_mandir}/man8 \
 	CONF=$RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
@@ -59,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES README
 %verify(not md5 mtime size) %config(noreplace) %{_sysconfdir}/%{name}.conf
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man?/*
+%attr(755,root,root) %{_bindir}/%{name}
+%{_mandir}/man8/%{name}.8*
