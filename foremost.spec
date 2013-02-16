@@ -8,6 +8,7 @@ Group:		Applications/System
 Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
 # Source0-md5:	860119c49665c2a3fb2b0b1d3dbad02a
 Patch0:		%{name}-sysconfdir.patch
+Patch1:		%{name}-format-security.patch
 URL:		http://foremost.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,6 +35,7 @@ odzyskiwania danych.
 %setup -q
 sed -i -e 's,\r$,,' main.h
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \

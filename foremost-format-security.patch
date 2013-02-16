@@ -1,0 +1,11 @@
+--- foremost-1.5.7/extract.c.formatsec	2013-02-16 11:26:37.783832687 +0100
++++ foremost-1.5.7/extract.c	2013-02-16 11:27:31.220209864 +0100
+@@ -2145,7 +2145,7 @@ unsigned char *extract_exe(f_state *s, u
+ 			ret_time->tm_sec);
+ 	chop(ascii_time);
+ 
+-	sprintf(comment, ascii_time);
++	sprintf(comment, "%s", ascii_time);
+ 	strcat(needle->comment, comment);
+ 	exe_char = htos(&foundat[22], FOREMOST_LITTLE_ENDIAN);
+ 	if (exe_char & 0x2000)
