@@ -1,0 +1,76 @@
+diff -urN .tmpsrc/base/foremost-1.5.7/api.c .tmpsrc/fixed/foremost-1.5.7/api.c
+--- .tmpsrc/base/foremost-1.5.7/api.c	2010-03-02 03:49:30.000000000 +0100
++++ .tmpsrc/fixed/foremost-1.5.7/api.c	2026-03-09 19:02:36.006356822 +0100
+@@ -18,6 +18,8 @@
+ int				FATblk;
+ int				currFATblk;
+ int				highblk = 0;
++struct DIRECTORY	*dirlist;
++struct DIRECTORY	*dl;
+ int				block_list[OUR_BLK_SIZE / sizeof(int)];
+ extern int		errno;
+ 
+diff -urN .tmpsrc/base/foremost-1.5.7/main.c .tmpsrc/fixed/foremost-1.5.7/main.c
+--- .tmpsrc/base/foremost-1.5.7/main.c	2010-03-02 03:49:30.000000000 +0100
++++ .tmpsrc/fixed/foremost-1.5.7/main.c	2026-03-09 19:02:36.006356822 +0100
+@@ -23,6 +23,10 @@
+ int _CRT_fmode = _O_BINARY;
+ #endif
+ 
++char wildcard;
++s_spec search_spec[50];
++int signal_caught;
++
+ void catch_alarm(int signum)
+ {
+ 	signal_caught = signum;
+diff -urN .tmpsrc/base/foremost-1.5.7/main.h .tmpsrc/fixed/foremost-1.5.7/main.h
+--- .tmpsrc/base/foremost-1.5.7/main.h	2026-03-09 19:02:30.877092991 +0100
++++ .tmpsrc/fixed/foremost-1.5.7/main.h	2026-03-09 19:02:36.006356822 +0100
+@@ -299,7 +299,7 @@
+ /* -----------------------------------------------------------------
+    State Variable and Global Variables
+    ----------------------------------------------------------------- */
+-char wildcard;
++extern char wildcard;
+ typedef struct f_state 
+ {
+   off_t mode;
+@@ -351,7 +351,7 @@
+     int written; /*used for -a mode*/
+ }s_spec;
+ 
+-s_spec search_spec[50];  /*ARRAY OF BUILTIN SEARCH TYPES*/
++extern s_spec search_spec[50];  /*ARRAY OF BUILTIN SEARCH TYPES*/
+ 
+ typedef struct f_info {
+   char *file_name;
+@@ -374,7 +374,7 @@
+ } f_info;
+ 
+ /* Set if the user hits ctrl-c */
+-int signal_caught;
++extern int signal_caught;
+ 
+ /* -----------------------------------------------------------------
+    Function definitions
+@@ -472,5 +472,4 @@
+ 
+ 
+ 
+-
+ 
+diff -urN .tmpsrc/base/foremost-1.5.7/ole.h .tmpsrc/fixed/foremost-1.5.7/ole.h
+--- .tmpsrc/base/foremost-1.5.7/ole.h	2010-03-02 03:49:30.000000000 +0100
++++ .tmpsrc/fixed/foremost-1.5.7/ole.h	2026-03-09 19:02:49.289690148 +0100
+@@ -84,8 +84,8 @@
+ 	int		s2;
+ 	int		d1;
+ 	int		d2;
+-}
+-*dirlist, *dl;
++};
++extern struct DIRECTORY *dirlist, *dl;
+ 
+ int				get_dir_block(unsigned char *fd, int blknum, int buffersize);
+ int				get_dir_info(unsigned char *src);
