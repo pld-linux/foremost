@@ -2,14 +2,16 @@ Summary:	Recover files by "carving" them from a raw disk
 Summary(pl.UTF-8):	Odzyskiwanie plików poprzez "wykrawanie" ich z dysku
 Name:		foremost
 Version:	1.5.7
-Release:	4
+Release:	5
 License:	Public Domain
 Group:		Applications/System
-Source0:	http://foremost.sourceforge.net/pkg/%{name}-%{version}.tar.gz
+Source0:	https://ftp.debian.org/debian/pool/main/f/%{name}/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	860119c49665c2a3fb2b0b1d3dbad02a
 Patch0:		%{name}-sysconfdir.patch
 Patch1:		%{name}-format-security.patch
-URL:		http://foremost.sourceforge.net/
+# Fix build with GCC 10+ default -fno-common
+Patch2:		%{name}-gcc10.patch
+URL:		https://foremost.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,6 +38,7 @@ odzyskiwania danych.
 sed -i -e 's,\r$,,' main.h
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p3
 
 %build
 %{__make} \
